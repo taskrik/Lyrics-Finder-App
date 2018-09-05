@@ -1,0 +1,43 @@
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import { getTracks } from '../../actions/tracks';
+import Track from './Track';
+
+
+class Tracks extends Component {
+    
+componentWillMount(){
+    this.props.getTracks()
+
+}
+
+  render() {
+      if (this.props.tracks !== undefined) {
+        const tracks = this.props.tracks.track_list
+        //console.log(this.props.tracks.track_list)
+       
+        return (
+            <div>
+                <h1>Top 10 Tracks</h1>
+                <div className="row">
+                    {tracks.map(trackItem =>(
+                        <Track key={trackItem.track.track_id} track={trackItem.track}/>
+                    ))}
+                    
+
+                </div>
+            </div>
+          )
+      } else {
+          return <h2>Loading...</h2>
+      }
+         
+  }
+
+}
+
+const mapStateToProps = (state) => ({
+    tracks: state.tracks.list
+})
+
+export default connect (mapStateToProps,{getTracks})(Tracks);
