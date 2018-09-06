@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { getTracks } from '../../actions/tracks';
 import Track from './Track';
+import Loading from '../layout/Loading';
 
 
 class Tracks extends Component {
@@ -29,7 +30,7 @@ componentWillMount(){
             </div>
           )
       } else {
-          return <h2>Loading...</h2>
+          return <Loading />
       }
          
   }
