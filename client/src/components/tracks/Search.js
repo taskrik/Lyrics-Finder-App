@@ -17,10 +17,10 @@ class Search extends Component {
     Search = (e) => {
         e.preventDefault();
         const search = this.state.trackTitle
-        
+
         this.props.findTrack(search)
     }
-    
+
 
     render() {
         return (
@@ -33,12 +33,12 @@ class Search extends Component {
                     <form onSubmit={this.Search}>
                         <div className="from-group">
 
-                            <input  type="text"
-                                    placeholder="song title..." 
-                                    name="trackTitle" 
-                                    value={this.state.trackTitle}
-                                    onChange={this.onChange} 
-                                    className="form-control form-control-lg" />
+                            <input type="text"
+                                placeholder="song title..."
+                                name="trackTitle"
+                                value={this.state.trackTitle}
+                                onChange={this.onChange}
+                                className="form-control form-control-lg" />
 
                             <button className="btn btn-primary btn-lg btn-block mb-5" type="submit" >
                                 Get Track Lyrics
@@ -56,4 +56,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, {findTrack})(Search);
+export default connect(mapStateToProps, { findTrack })(Search);

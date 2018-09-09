@@ -9,7 +9,7 @@ import Loading from '../layout/Loading';
 class Tracks extends Component {
     state = {
         tracks: {},
-        track:[]
+        track: []
     }
     componentWillMount() {
         this.props.getTracks()
@@ -17,49 +17,48 @@ class Tracks extends Component {
 
 
     render() {
-       // console.log(this.props.track);
         
-        if(Object.keys(this.props.track).length !== 0){
+        if (Object.keys(this.props.track).length !== 0) {
             const track = this.props.track
-            
-            return(
-                <div>
-                    <h1>Search Results:</h1>
-                       <div className="row"> {track.map(trackItem => (
-                            <SearchResult key={trackItem.track.track_id} tracks={trackItem.track}/>
-                        ))}
-
-                        </div>
-                    
-                </div>
-            )
-        }else{
-
-        if (this.props.tracks !== undefined) {
-            const tracks = this.props.tracks.track_list
-            //console.log(this.props.tracks.track_list)
 
             return (
                 <div>
-                    <h1>Top 10 Tracks</h1>
-                    <div className="row">
-                        {tracks.map(trackItem => (
-                            <Track key={trackItem.track.track_id} track={trackItem.track} />
-                        ))}
-
+                    <h1>Search Results:</h1>
+                    <div className="row"> {track.map(trackItem => (
+                        <SearchResult key={trackItem.track.track_id} tracks={trackItem.track} />
+                    ))}
 
                     </div>
+
                 </div>
             )
         } else {
-            return (
-                <div>
-                    <h2>Fetching Tracks...</h2>
-                    <Loading />
-                </div>
-            )
+
+            if (this.props.tracks !== undefined) {
+                const tracks = this.props.tracks.track_list
+                //console.log(this.props.tracks.track_list)
+
+                return (
+                    <div>
+                        <h1>Top 10 Tracks</h1>
+                        <div className="row">
+                            {tracks.map(trackItem => (
+                                <Track key={trackItem.track.track_id} track={trackItem.track} />
+                            ))}
+
+
+                        </div>
+                    </div>
+                )
+            } else {
+                return (
+                    <div>
+                        <h2>Fetching Tracks...</h2>
+                        <Loading />
+                    </div>
+                )
+            }
         }
-    }
     }
 
 }
