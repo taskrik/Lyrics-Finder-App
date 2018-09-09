@@ -23,7 +23,7 @@ class Lyrics extends Component {
     render() {
         const { lyrics, track } = this.props
 
-        if (lyrics === undefined || lyrics === null || Object.keys(lyrics).length === 0 ||
+        if ( 
         track === undefined || track === null || Object.keys(track).length === 0) {
             return (
                 <div>
@@ -31,7 +31,16 @@ class Lyrics extends Component {
                     <Loading />
                 </div>
             )
-        } else {
+        }else if(lyrics === undefined || lyrics === null || Object.keys(lyrics).length === 0){
+
+            return (
+                <div className="card">
+                    <h2 className="card-header">Sorry No lyrics available for this song...</h2>
+                    <Link to={`/`} className="btn btn-dark btn-sm mb-4" onClick={this.handleClick}>Go Back</Link>
+                </div>
+            )
+
+        }else {
             return (
                 <div>
                     <Link to={`/`} className="btn btn-dark btn-sm mb-4" onClick={this.handleClick}>Go Back</Link>
@@ -54,7 +63,7 @@ class Lyrics extends Component {
                             <strong>Album ID</strong>: {track.album_id}
                         </li>
                         <li className="list-group-item">
-                            <strong>Genre</strong>:{ track.primary_genres.music_genre_list.length === 0? " n/a" : 
+                            <strong>Genre</strong>:{ track.primary_genres.music_genre_list.length === 0 ? " n/a" : 
                                 track.primary_genres.music_genre_list[0].music_genre.music_genre_name
                             }
                         </li>

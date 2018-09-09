@@ -2,20 +2,39 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getTracks } from '../../actions/tracks';
 import Track from './Track';
+import SearchResult from './SearchResult';
 import Loading from '../layout/Loading';
 
 
 class Tracks extends Component {
     state = {
-        tracks: {}
+        tracks: {},
+        track:[]
     }
     componentWillMount() {
-
         this.props.getTracks()
     }
 
 
     render() {
+       // console.log(this.props.track);
+        
+        if(Object.keys(this.props.track).length !== 0){
+            const track = this.props.track
+            
+            return(
+                <div>
+                    <h1>Search Results:</h1>
+                       <div className="row"> {track.map(trackItem => (
+                            <SearchResult key={trackItem.track.track_id} tracks={trackItem.track}/>
+                        ))}
+
+                        </div>
+                    
+                </div>
+            )
+        }else{
+
         if (this.props.tracks !== undefined) {
             const tracks = this.props.tracks.track_list
             //console.log(this.props.tracks.track_list)
@@ -40,13 +59,14 @@ class Tracks extends Component {
                 </div>
             )
         }
-
+    }
     }
 
 }
 
 const mapStateToProps = (state) => ({
-    tracks: state.tracks.list
+    tracks: state.tracks.list,
+    track: state.track
 })
 
 export default connect(mapStateToProps, { getTracks })(Tracks);
