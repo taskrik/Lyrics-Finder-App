@@ -2,7 +2,9 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://taskrik.github.io/Lyrics-Finder-App",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "kcors": "^2.2.2",
     "moment": "^2.22.2",
     "react": "^16.4.2",
