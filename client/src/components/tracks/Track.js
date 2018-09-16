@@ -14,7 +14,7 @@ const Track = (props) => {
             <br />
             <strong><i className="fas fa-play"></i>Album</strong>: {track.album_name}
           </p>
-          <Link to={`/track/lyrics/${track.track_id}`} className="btn btn-dark btn-block">
+          <Link to={`/Lyrics-Finder-App/track/lyrics/${track.track_id}`} className="btn btn-dark btn-block">
             <i className="fas fa-chevron-right"></i>View Lyrics
             </Link>
         </div>

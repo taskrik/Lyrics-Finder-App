@@ -20,7 +20,7 @@ const SearchResult = (props) => {
                         <br />
                         <strong><i className="fas fa-play"></i>Album</strong>: {tracks.album_name}
                     </p>
-                    <Link to={`/track/lyrics/${tracks.track_id}`} className="btn btn-dark btn-block" onClick={clearState}>
+                    <Link to={`/Lyrics-Finder-App/track/lyrics/${tracks.track_id}`} className="btn btn-dark btn-block" onClick={clearState}>
                         <i className="fas fa-chevron-right"></i>View Lyrics
             </Link>
                 </div>

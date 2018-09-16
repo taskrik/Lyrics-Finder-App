@@ -36,14 +36,14 @@ class Lyrics extends Component {
             return (
                 <div className="card">
                     <h2 className="card-header">Sorry No lyrics available for this song...</h2>
-                    <Link to={`/`} className="btn btn-dark btn-sm mb-4" onClick={this.handleClick}>Go Back</Link>
+                    <Link to={`/Lyrics-Finder-App/`} className="btn btn-dark btn-sm mb-4" onClick={this.handleClick}>Go Back</Link>
                 </div>
             )
 
         } else {
             return (
                 <div>
-                    <Link to={`/`} className="btn btn-dark btn-sm mb-4" onClick={this.handleClick}>Go Back</Link>
+                    <Link to={`/Lyrics-Finder-App/`} className="btn btn-dark btn-sm mb-4" onClick={this.handleClick}>Go Back</Link>
                     <h2>Lyrics:</h2>
                     <div className="card">
                         <h5 className="card-header">
