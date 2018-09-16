@@ -3,11 +3,11 @@ import reducer from './reducers/index'
 import ReduxThunk from 'redux-thunk'
 
 
-const enhancer = compose(
-  applyMiddleware(ReduxThunk),
+// const enhancer = compose(
+//   applyMiddleware(ReduxThunk),
   
-)
+// )
 
-const store = createStore(reducer, enhancer)
+const store = createStore(reducer, applyMiddleware(ReduxThunk))
 
 export default store
