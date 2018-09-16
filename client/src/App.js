@@ -13,8 +13,8 @@ class App extends Component {
           <Navbar />
           <div className="container">
             <Switch>
-              <Route exact path="/" component={Index} />
-              <Route exact path="/track/lyrics/:id" component={Lyrics} />
+              <Route exact path="/Lyrics-Finder-App/" component={Index} />
+              <Route exact path="/Lyrics-Finder-App/track/lyrics/:id" component={Lyrics} />
             </Switch>
           </div>
         </div>

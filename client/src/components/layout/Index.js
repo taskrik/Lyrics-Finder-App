@@ -7,7 +7,6 @@ const Index = () => {
     <div>
       <Search />
       <Tracks />
-      
     </div>
   )
 }
