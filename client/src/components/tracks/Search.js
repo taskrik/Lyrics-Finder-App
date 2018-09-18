@@ -39,7 +39,7 @@ class Search extends Component {
                                 value={this.state.trackTitle}
                                 onChange={this.onChange}
                                 className="form-control form-control-lg" />
-
+                            <br/>
                             <button className="btn btn-primary btn-lg btn-block mb-5" type="submit" >
                                 Get Track Lyrics
                             </button>

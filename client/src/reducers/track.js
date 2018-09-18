@@ -7,7 +7,9 @@ export default (state = {}, action) => {
 
     switch (action.type) {
         case GET_TRACK:
-            return action.payload
+            return {
+                singleTrack: action.payload
+            }
 
         case FIND_TRACK:
             return action.payload

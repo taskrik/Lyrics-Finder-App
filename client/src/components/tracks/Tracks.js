@@ -7,18 +7,15 @@ import Loading from '../layout/Loading';
 
 
 class Tracks extends Component {
-    state = {
-        tracks: {},
-        track: []
-    }
+
     componentWillMount() {
         this.props.getTracks()
     }
 
 
     render() {
-        
-        if (Object.keys(this.props.track).length !== 0) {
+
+        if (Object.keys(this.props.track).length !== 0 && Object.keys(this.props.track).length > 1) {
             const track = this.props.track
 
             return (
